@@ -35,21 +35,15 @@ def money(left_round=0):
     wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
     op.skillChoose(1, 3)
     op.attack(1, 1, 2, 3, 2, 2, delay=12)
+    
     wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
     op.skillChoose(1, 2)
-    sleep(1)
     op.skillChoose(1, 3)
-    sleep(1)
-    op.skillChoose(1, 1, 3)
-    sleep(1)
     op.skillChoose(2, 3)
-    sleep(1)
     op.attack(1, 2, 2, 3, 2, 2, delay=12)
     wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
     op.skillChoose(3, 2)
-    sleep(1)
-    op.skillChoose(3, 3)
-    sleep(1)
+    op.skillChoose(3, 1)
     op.attack(1, 3, 2, 3, 2, 2, delay=12)
 
     # 处理结尾
