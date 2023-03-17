@@ -104,9 +104,10 @@ class op:
         svt: （可选）单体技能给别人的位置，取值 1-3
         """
         touch(iphone.masterSkill)
+        sleep(0.5)
         touch(iphone.masterSkillPos[num - 1])
-        touch(iphone.skillConfirmBtn)
-        sleep(.3)
+        # touch(iphone.skillConfirmBtn)
+        sleep(0.5)
         if svt != -1:
             touch(iphone.skillSvtPos[svt - 1])
             touch([10, 300])
@@ -116,10 +117,11 @@ class op:
         """
         换人服的从者位置，svt1, svt2 为从者位置，取值 1-6，且不可为相同数字
         """
-        touch(iphone.orderPos[svt1 - 1], 587)
-        touch(iphone.orderPos[svt2 - 1], 587)
+        touch(iphone.orderPos[svt1 - 1])
+        sleep(0.5)
+        touch(iphone.orderPos[svt2 - 1])
+        sleep(0.5)
         touch(iphone.orderPosConfirm)  # 进行更替
-        touch([10, 300])
         sleep(delay)
 
     def ending(eatApple):
