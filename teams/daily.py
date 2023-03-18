@@ -31,6 +31,7 @@ def pool(left_round=0):
     op.skillChoose(3, 1, 1)
     op.skillChoose(1, 1)
     op.skillChoose(1, 2)
+    op.masterSkillChoose(1)
     op.attack(1, 1, 2, 1, 2, 2, delay=12)
     op.ending(left_round > 0)
 
