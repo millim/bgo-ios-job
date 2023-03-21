@@ -39,20 +39,23 @@ def pool(left_round=0):
 def now(left_round=0):
     if left_round < 0:
         return
-    op.chooseFriend([1000, 600]) 
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
+    if exists(Template(r"common/宝石.jpg")):
+        op.chooseFriend(r"common/宝石.jpg")
+    else:
+        op.chooseFriend([1000, 600]) 
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
     op.skillChoose(1, 1)
-    op.skillChoose(2, 3)
-    op.skillChoose(3, 1, 1)
-    op.attack(1, 1, 2, 3, 2, 2, delay=12)
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
+    op.skillChoose(3, 2)
+    op.attack(1, 3, 2, 1, 2, 2, delay=12)
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
     op.skillChoose(1, 2)
     op.skillChoose(2, 1, 1)
-    op.skillChoose(2, 2)
     op.attack(1, 1, 2, 3, 2, 2, delay=12)
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
     op.skillChoose(1, 3)
-    op.skillChoose(3, 3, 1)
+    op.skillChoose(2, 2)
+    op.skillChoose(2, 3, 1)
+    op.masterSkillChoose(1)
     op.attack(1, 1, 2, 3, 2, 2, delay=12)
     op.ending(left_round > 0)
 

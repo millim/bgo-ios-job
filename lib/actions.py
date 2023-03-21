@@ -172,35 +172,9 @@ class op:
             touch(coor)
 
 
-def unlimited(round=5):
+def unlimited():
     """
     抽无限池
     """
-    def resetPresent():
-        coor = wait(Template(r"common/重置礼物.jpeg", threshold=0.9), timeout=10)
-        touch(coor)
-        touch(iphone.unlimitedExec)  # 执行
-        sleep(2)
-        touch(iphone.unlimitedClose)  # 关闭
-
-    stop_threads = False
-
-    def detectInterrpt(interval=5):
-        nonlocal stop_threads
-        while not stop_threads:
-            sleep(5)
-            op.clickRetry()
-
-    th_intrpt = Thread(target=detectInterrpt)
-    th_intrpt.start()
-
-    for _ in range(1, round + 1):
-        touch(iphone.unlimitedReset, 135)
-        try:
-            resetPresent()
-        except:
-            touch(iphone.unlimitedReset, 30)
-            resetPresent()
-
-    stop_threads = True
-    th_intrpt.join()
+    while 1:
+        touch(iphone.unlimitedReset, 200)

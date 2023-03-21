@@ -24,6 +24,9 @@ def main():
         if sys.argv[1] == "-h":
             print("运行方式: python main.py 队伍名 运行次数")
             return
+        if sys.argv[1] == "-u":
+            unlimited()
+            return
         team = getattr(sys.modules[__name__], sys.argv[1])
         if sys.argv[2].isdigit():
             wrapTimes(team)(int(sys.argv[2]))
@@ -34,11 +37,6 @@ def main():
             if len(sys.argv) == 4:
                 now = int(sys.argv[3])
             wrapTimes(team)(calcRound(apple, now))
-        elif sys.argv[2] == "-u":  # 抽无限池
-            round = 5
-            if len(sys.argv) == 4:
-                round = int(sys.argv[3])
-            unlimited(round)
         else:
             logging.error("参数错误")
     except Exception as err:

@@ -26,4 +26,4 @@ class iphone13p:
     # 无限池
     unlimitedExec = [1600, 910]
     unlimitedClose = [1273, 910]
-    unlimitedReset = [710, 770]
+    unlimitedReset = [740, 740]
