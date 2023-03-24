@@ -82,7 +82,7 @@ class op:
             touch(coor)
         sleep(3)
 
-    def skillChoose(servant: int, skill: int, svt=-1, delay=2):
+    def skillChoose(servant: int, skill: int, svt=-1, delay=1.5):
         """
         选择从者技能
         servant: 从者位置，取值1-3
