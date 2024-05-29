@@ -2,7 +2,7 @@ import logging
 from airtest.core.api import *
 from cv2 import threshold
 from threading import Thread
-from lib.iphone13_pro import iphone13p as iphone
+from lib.iphone15promax import iphone15promax as iphone
 
 
 logger = logging.getLogger("actions")
@@ -90,11 +90,13 @@ class op:
         svt: （可选）单体技能给别人的位置，取值 1-3
         """
         touch(iphone.skillChoose[servant - 1][skill - 1])
-        touch(iphone.skillConfirmBtn)
+        # sleep(0.5)
+        # touch(iphone.skillConfirmBtn)
+        sleep(0.5)
         if svt != -1:
             touch(iphone.skillSvtPos[svt - 1])
-        sleep(0.5)
-        touch([1162, 361])
+        # sleep(0.5)
+        # touch(iphone.skillConfirmBtn)
         sleep(delay)
 
     def masterSkillChoose(num: int, svt=-1, delay=1.3):

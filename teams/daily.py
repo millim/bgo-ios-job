@@ -3,30 +3,37 @@ from airtest.core.api import *
 __author__ = "sansui233"
 from lib.actions import op
 
+def pool1(left_round=0):
+    if left_round < 0:
+        return
+    op.masterSkillChoose(3)
+    op.masterChangeOrderPos(3,4)
+
 def pool(left_round=0):
     if left_round < 0:
         return
-    op.chooseFriend(r"common/A狐.png") 
+    op.chooseFriend(r"common/杀狐2.png")
     wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
-    op.skillChoose(1, 1)
-    op.skillChoose(1, 2)
-    op.attack(1, 1, 2, 1, 2, 2, delay=12)
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
-    op.skillChoose(3, 1)
-    op.skillChoose(3, 2)
-    op.masterSkillChoose(1)
-    op.attack(1, 3, 2, 1, 2, 2, delay=12)
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
-    op.masterSkillChoose(3)
-    op.masterChangeOrderPos(3,4)
-    op.skillChoose(2, 1, 1)
-    op.skillChoose(2, 2, 1)
-    op.skillChoose(2, 3, 1)
-    op.skillChoose(3, 1, 1)
-    op.skillChoose(3, 2, 1)
     op.skillChoose(3, 3, 1)
+    op.skillChoose(2, 3, 1)
+    op.skillChoose(1, 1)
+    op.attack(1, 1, 2, 1, 2, 2, delay=10)
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
+    op.skillChoose(1, 2)
+    op.skillChoose(2, 2, 1)
+    op.skillChoose(2, 1, 1)
+    op.skillChoose(3, 2, 1)
+    op.masterSkillChoose(3)
+    op.masterChangeOrderPos(2,4)
+    op.skillChoose(2, 3)
+    op.skillChoose(2, 2)
+    op.attack(1, 1, 2, 1, 2, 2, delay=10)
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
+    op.skillChoose(3, 1, 1)
+    op.skillChoose(2, 1, 1)
     op.skillChoose(1, 1)
     op.skillChoose(1, 2)
+    op.masterSkillChoose(1)
     op.attack(1, 1, 2, 1, 2, 2, delay=12)
     op.ending(left_round > 0)
 
@@ -34,23 +41,20 @@ def pool(left_round=0):
 def now(left_round=0):
     if left_round < 0:
         return
-    if exists(Template(r"common/宝石.jpg")):
-        op.chooseFriend(r"common/宝石.jpg")
-    else:
-        op.chooseFriend([1000, 600]) 
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
+    op.chooseFriend([1000, 600]) 
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
     op.skillChoose(1, 1)
-    op.skillChoose(3, 2)
-    op.attack(1, 3, 2, 1, 2, 2, delay=12)
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
+    op.skillChoose(2, 3)
+    op.skillChoose(3, 1, 1)
+    op.attack(1, 1, 2, 3, 2, 2, delay=12)
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
     op.skillChoose(1, 2)
     op.skillChoose(2, 1, 1)
-    op.attack(1, 1, 2, 3, 2, 2, delay=12)
-    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=15, interval=1)
-    op.skillChoose(1, 3)
     op.skillChoose(2, 2)
-    op.skillChoose(2, 3, 1)
-    op.masterSkillChoose(1)
+    op.attack(1, 1, 2, 3, 2, 2, delay=12)
+    wait(Template(r"common/攻击.jpeg", rgb=True), timeout=20, interval=1)
+    op.skillChoose(1, 3)
+    op.skillChoose(3, 3, 1)
     op.attack(1, 1, 2, 3, 2, 2, delay=12)
     op.ending(left_round > 0)
 

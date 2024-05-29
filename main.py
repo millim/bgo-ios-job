@@ -15,7 +15,7 @@ __author__ = "sansui233"
 
 auto_setup(__file__)
 # connect_device("iOS:///127.0.0.1:8100")
-connect_device("iOS:///http+usbmux://00008101-001258393C40001E")
+connect_device("iOS:///http+usbmux://00008130-001A10161AE0001C")
 
 
 def main():
