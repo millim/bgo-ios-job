@@ -82,21 +82,18 @@ class op:
             touch(coor)
         sleep(3)
 
-    def skillChoose(servant: int, skill: int, svt=-1, delay=1.5):
+    def skillChoose(servant: int, skill: int, svt=-1, delay=2):
         """
         选择从者技能
         servant: 从者位置，取值1-3
         skill: 技能位置, 取值1-3
         svt: （可选）单体技能给别人的位置，取值 1-3
         """
+        sleep(1)
         touch(iphone.skillChoose[servant - 1][skill - 1])
-        # sleep(0.5)
-        # touch(iphone.skillConfirmBtn)
-        sleep(0.5)
+        sleep(1)
         if svt != -1:
             touch(iphone.skillSvtPos[svt - 1])
-        # sleep(0.5)
-        # touch(iphone.skillConfirmBtn)
         sleep(delay)
 
     def masterSkillChoose(num: int, svt=-1, delay=1.3):
@@ -106,10 +103,10 @@ class op:
         svt: （可选）单体技能给别人的位置，取值 1-3
         """
         touch(iphone.masterSkill)
-        sleep(0.5)
+        sleep(2)
         touch(iphone.masterSkillPos[num - 1])
         # touch(iphone.skillConfirmBtn)
-        sleep(0.5)
+        sleep(2)
         if svt != -1:
             touch(iphone.skillSvtPos[svt - 1])
             touch([10, 300])
@@ -120,9 +117,9 @@ class op:
         换人服的从者位置，svt1, svt2 为从者位置，取值 1-6，且不可为相同数字
         """
         touch(iphone.orderPos[svt1 - 1])
-        sleep(0.5)
+        sleep(1)
         touch(iphone.orderPos[svt2 - 1])
-        sleep(0.5)
+        sleep(1)
         touch(iphone.orderPosConfirm)  # 进行更替
         sleep(delay)
 
@@ -132,7 +129,7 @@ class op:
                 r"common/与从者的羁绊.png", record_pos=(-0.351, -0.136), resolution=(2208, 1242)
             ),
             timeout=45,
-            interval=1,
+            interval=2,
         )
         touch(iphone.nextBtn)
         sleep(1)
