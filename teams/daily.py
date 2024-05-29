@@ -34,7 +34,17 @@ def pool(left_round=0):
     op.skillChoose(1, 1)
     op.skillChoose(1, 2)
     op.masterSkillChoose(1)
-    op.attack(1, 1, 2, 1, 2, 2, delay=12)
+    op.attack(1, 1, 2, 1, 2, 2, delay=15)
+    loop = True
+    while loop:
+        _loop1 = exists(Template(r"common/攻击.jpeg"))
+        if _loop1:
+            op.attack(2, 3, 2, 1, 2, 2, delay=10)
+            continue
+        _loop2 = exists(Template(r"common/战斗结果.png"))
+        if _loop2:
+            break
+        sleep(5)
     op.ending(left_round > 0)
 
 

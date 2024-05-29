@@ -134,11 +134,11 @@ class op:
             timeout=45,
             interval=1,
         )
-        touch([100, 10])
+        touch(iphone.nextBtn)
         sleep(1)
-        touch([100, 10])
+        touch(iphone.nextBtn)
         sleep(1)
-        touch([100, 10])
+        touch(iphone.nextBtn)
         sleep(1)  # 防止意外情况，升级什么的
         touch(iphone.nextBtn)
         sleep(1)
