@@ -103,16 +103,16 @@ class op:
         svt: （可选）单体技能给别人的位置，取值 1-3
         """
         touch(iphone.masterSkill)
-        sleep(2)
+        sleep(1)
         touch(iphone.masterSkillPos[num - 1])
         # touch(iphone.skillConfirmBtn)
-        sleep(2)
+        sleep(1)
         if svt != -1:
             touch(iphone.skillSvtPos[svt - 1])
             touch([10, 300])
         sleep(delay)
 
-    def masterChangeOrderPos(svt1: int, svt2: int, delay=4):
+    def masterChangeOrderPos(svt1: int, svt2: int, delay=2):
         """
         换人服的从者位置，svt1, svt2 为从者位置，取值 1-6，且不可为相同数字
         """

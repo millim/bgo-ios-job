@@ -83,7 +83,11 @@ def calcRound(consume=12, now=139, perApple=139):
         return result
 
 # 可以用装饰器的形式加在 def teamfunc 前指定指定次数，但就是，谁会固定 team 的执行次数啊……
-
+def progress_bar(now: int, max: int):
+    i = int(now / max * 100)
+    print("\r", end="")
+    print("执行进度: {}%: ".format(i), "▋" * (i // 2), end="")
+    sys.stdout.flush()
 
 def wrapTimes(team_func):
     """
@@ -98,8 +102,7 @@ def wrapTimes(team_func):
     def wrapped(times: int):
         nonlocal round
         while round <= times:
-            logging.info("执行第 %d 轮", round)
-            logging.info("剩余执行轮数: %d", times - round)
+            progress_bar(round, times)
             team_func(times - round)
             round += 1
 
@@ -110,3 +113,4 @@ def wrapTimes(team_func):
 if __name__ == "__main__":
     sys.path.append(os.path.dirname(sys.path[0]))
     main()
+
