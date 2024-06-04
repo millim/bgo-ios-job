@@ -91,9 +91,10 @@ class op:
         """
         sleep(1)
         touch(iphone.skillChoose[servant - 1][skill - 1])
-        sleep(1)
         if svt != -1:
+            sleep(1)
             touch(iphone.skillSvtPos[svt - 1])
+        touch(iphone.nextBtn)
         sleep(delay)
 
     def masterSkillChoose(num: int, svt=-1, delay=1.3):
